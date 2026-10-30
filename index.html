@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f1e8"><title>ILY Shop — ไอเทมเกม</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">ily</span><span>ILY Shop<small>game items · picked with love</small></span></a>
+  <nav><a href="#products">สินค้า</a><a href="#howto">วิธีสั่งซื้อ</a><button class="cart-btn" id="openCart">ตะกร้า <b id="cartCount">0</b></button></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy"><p class="eyebrow">WELCOME TO ILY SHOP</p><h1>ไอเทมเกมที่คุณ<br><em>กำลังตามหา</em></h1>
+      <p class="muted">เลือกไอเทมที่ชอบ แล้วสั่งซื้อได้ง่าย ๆ ในไม่กี่ขั้นตอน</p><a class="primary-link" href="#products">เลือกชมสินค้า <span>↗</span></a></div>
+    <div class="hero-art"><div class="hero-sticker">ILY<br><small>SHOP</small></div><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="hero-note">a little treat<br>for your game ♡</div></div>
+  </section>
+  <section class="section" id="products">
+    <div class="section-head"><div><p class="eyebrow">THE COLLECTION</p><h2>สินค้าแนะนำ</h2></div><span class="muted" id="productTotal"></span></div>
+    <div class="toolbar"><input id="search" type="search" placeholder="ค้นหาสินค้า..."><select id="category"><option value="all">ทุกหมวดหมู่</option><option value="Hay Day">Hay Day</option><option value="บริการ">บริการ</option><option value="อื่น ๆ">อื่น ๆ</option></select></div>
+    <div class="products" id="productsGrid"></div>
+  </section>
+  <section class="howto" id="howto"><p class="eyebrow">SIMPLE & EASY</p><h2>สั่งซื้ออย่างไร?</h2><div class="steps"><article><b>01</b><h3>เลือกสินค้า</h3><p>กดเพิ่มสินค้าลงตะกร้า</p></article><article><b>02</b><h3>กรอกข้อมูล</h3><p>ใส่ช่องทางติดต่อและรายละเอียดเกม</p></article><article><b>03</b><h3>ชำระเงิน</h3><p>เลือกโอนธนาคารหรือ Wallet</p></article><article><b>04</b><h3>รอตรวจสอบ</h3><p>เก็บเลขออเดอร์ไว้ติดตามสถานะ</p></article></div></section>
+</main>
+<footer><div class="brand"><span class="brand-mark">ily</span><span>ILY Shop<small>made with love, picked for you ♡</small></span></div><p>© <span id="year"></span> ILY Shop</p><a href="admin.html">สำหรับผู้ดูแลร้าน</a></footer>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer"><div class="drawer-head"><h2>ตะกร้าสินค้า</h2><button class="icon-btn" id="closeCart">✕</button></div><div id="cartItems" class="cart-items"></div><div class="drawer-bottom"><div class="total-line"><span>ยอดรวม</span><strong id="cartTotal">฿0</strong></div><button class="primary-btn" id="checkoutBtn">ดำเนินการสั่งซื้อ</button></div></aside>
+<dialog id="checkoutDialog"><form id="orderForm"><div class="dialog-head"><div><p class="eyebrow">CHECKOUT</p><h2>ข้อมูลการสั่งซื้อ</h2></div><button type="button" class="icon-btn" id="closeCheckout">✕</button></div>
+<label>ชื่อผู้สั่งซื้อ<input name="customer" required placeholder="ชื่อเล่นหรือชื่อผู้รับ"></label>
+<label>ช่องทางติดต่อ<input name="contact" required placeholder="LINE ID / Facebook / เบอร์โทร"></label>
+<label>รายละเอียดในเกม<textarea name="gameInfo" rows="2" placeholder="ชื่อในเกม / ข้อมูลที่จำเป็นสำหรับส่งสินค้า"></textarea></label>
+<label>วิธีชำระเงิน<select name="payment" required><option value="">เลือกวิธีชำระเงิน</option><option>โอนธนาคาร</option><option>Wallet</option></select></label>
+<label>หมายเหตุ<textarea name="note" rows="2" placeholder="รายละเอียดเพิ่มเติม (ถ้ามี)"></textarea></label>
+<div class="payment-note">หลังยืนยันคำสั่งซื้อ กรุณาติดต่อร้านเพื่อรับข้อมูลการชำระเงิน ช่องทางชำระเงินจริงยังไม่ได้ตั้งค่าในเว็บนี้</div>
+<div class="total-line"><span>ยอดชำระ</span><strong id="checkoutTotal">฿0</strong></div>
+<button class="primary-btn" type="submit">ยืนยันคำสั่งซื้อ</button></form></dialog>
+<dialog id="successDialog"><div class="success"><div class="success-icon">♡</div><p class="eyebrow">ORDER RECEIVED</p><h2>รับคำสั่งซื้อแล้ว</h2><p>เลขออเดอร์ของคุณคือ</p><strong id="orderNumber" class="order-number"></strong><p class="muted">กรุณาบันทึกเลขออเดอร์และติดต่อร้านเพื่อดำเนินการชำระเงิน</p><button class="primary-btn" id="finishOrder">เรียบร้อย</button></div></dialog>
+<script src="app.js"></script>
+</body></html>
